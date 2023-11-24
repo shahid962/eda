@@ -6,5 +6,10 @@ resource "aws_key_pair" "SSH-key" {
 }
 module "vpc" {
   source = "./vpc"
-
+}
+module "eks" {
+  source    = "./eks"
+  vpcid     = module.vpc.vpcid
+  pvtcidrid = module.vpc.pvtcidrid
+  pubcidrid = module.vpc.pubcidrid
 }
