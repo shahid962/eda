@@ -4,6 +4,7 @@ resource "aws_key_pair" "SSH-key" {
   key_name   = "Shahid-eda-key"
   public_key = file("~/.ssh/id_rsa.pub")
 }
+
 module "vpc" {
   source = "./vpc"
 }
@@ -13,3 +14,8 @@ module "eks" {
   pvtcidrid = module.vpc.pvtcidrid
   pubcidrid = module.vpc.pubcidrid
 }
+
+# module "argocd" {
+#   source = "../argocd"
+#   #depends_on = [ module.eks ]
+# }

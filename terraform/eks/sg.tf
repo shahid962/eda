@@ -13,12 +13,6 @@ resource "aws_security_group" "eks-node" {
   name        = "eks-node-sg"
   description = "EKS node security group"
   vpc_id      = var.vpcid
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
   tags = merge(var.tags,
     {
       Name = "Shahid-eks-node-sg"

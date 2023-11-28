@@ -35,3 +35,11 @@ resource "aws_eks_node_group" "eks-node-group" {
     }
   )
 }
+
+#fetch kubeconfig
+resource "null_resource" "get_kubeconfig" {
+  provisioner "local-exec" {
+    command = "aws eks update-kubeconfig --name ${aws_eks_cluster.eks-cluster.name} --region us-east-1"
+  }
+  
+}
