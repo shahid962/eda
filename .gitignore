@@ -2,3 +2,12 @@ terraform/.terraform
 terraform/terraform.tfstate*
 terraform/.terraform/*
 terraform/.terraform.lock.hcl
+terraform/.idea
+terraform/.idea/*
+letsencrypt/.terraform.lock.hcl
+letsencrypt/.terraform/
+letsencrypt/terraform.tfstate
+selfsignedssl/.terraform.lock.hcl
+selfsignedssl/.terraform/
+selfsignedssl/terraform.tfstate
+terraform.tfstate

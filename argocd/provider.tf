@@ -7,8 +7,16 @@ terraform {
   }
 }
 
+# provider "kubernetes" {
+#   config_path = "~/.kube/config"
+#   config_context = "xxxxx"
+#   alias = "eks"
+# }
+
 provider "kubernetes" {
-  config_path = "~/.kube/config"
-  config_context = "xxxxx"
+  host = var.eks_cluster_endpoint
+  cluster_ca_certificate = base64decode(var.eks_cluster_ca_certificate)
+  token = var.eks_token
   alias = "eks"
+  
 }
