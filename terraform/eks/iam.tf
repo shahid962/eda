@@ -61,3 +61,4 @@ resource "aws_iam_role" "eda-nodes-iam-role" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
   role    = aws_iam_role.eda-nodes-iam-role.name
  }
+
